@@ -11,7 +11,7 @@ export const assertionFunctions = [ stringEqual ]
 
 // EDIT THIS WITH YOUR TEST TEMPLATES
 export const template = (c) => {
-  return `stringEqual(~message="${c.description}", hello(), "${c.expected}")`
+  return `stringEqual(~message="${c.description}", abbreviate("${c.input.phrase}"), "${c.expected}")`
 }
 
 generateTests(__dirname, slug, assertionFunctions, template)
