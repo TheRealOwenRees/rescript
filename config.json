@@ -26,7 +26,8 @@
       "tests/%{pascal_slug}_test.res"
     ],
     "example": [
-      ".meta/%{pascal_slug}.res"
+      ".meta/%{pascal_slug}.res",
+      ".meta/%{pascal_slug}.resi"
     ],
     "exemplar": [
       ".meta/src/%{pascal_slug}.res"
@@ -60,6 +61,14 @@
         "practices": [],
         "prerequisites": [],
         "difficulty": 2
+      },
+      {
+        "slug": "binary-search",
+        "name": "Binary Search",
+        "uuid": "ae0c39ec-5ace-4ee5-8be3-e30e0e728bb2",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1
       }
     ]
   },
