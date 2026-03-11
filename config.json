@@ -26,10 +26,12 @@
       "tests/%{pascal_slug}_test.res"
     ],
     "example": [
-      ".meta/%{pascal_slug}.res"
+      ".meta/%{pascal_slug}.res",
+      ".meta/%{pascal_slug}.resi"
     ],
     "exemplar": [
-      ".meta/src/%{pascal_slug}.res"
+      ".meta/src/%{pascal_slug}.res",
+      ".meta/src/%{pascal_slug}.resi"
     ],
     "editor": [
       "src/%{pascal_slug}.resi"
