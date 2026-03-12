@@ -16,15 +16,6 @@ The exercises in this langauge are written in [ReScript] v12.
 
 ### Setting up the development environment
 
-Make a fork of the ReScript languge track GitHub [repository]. Clone your fork onto your machine:
-
-```shell
-# assuming you didn't change the repository name
-git clone https://github.com/<your-username>/rescript.git
-cd rescript
-vscode .
-```
-
 Run the following commands from inside the project root directory to install the required tools:
 
 ```shell
