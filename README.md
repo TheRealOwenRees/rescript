@@ -14,8 +14,10 @@ Run the following commands from inside the project root directory to install the
 
 ```shell
 npm install
-git submodule update --init --recursive
+git submodule update --init --recursive # add/update a local copy of the problem-specification submodule
 ```
+
+To automate the creation of practice exercise tests, our track tooling consumes data from the the [problem specifications][exercism-problem-specifications-link] submodule. Because these specifications serve as the canonical source for all Exercism tracks, any upstream updates ensure our test cases remain consistent with the global exercise standard.
 
 If you have format on save enabled for JSON files, it is recommended to disable this feature. Alternatively save JSON files with `Ctrl+K s` to save without applying formatting rules.
 
@@ -149,3 +151,4 @@ If you find this documentation is inaccurate or incomplete, or can be improved i
 [github-fork-pr-link]: https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork
 [exercism-pr-docs-link]: https://exercism.org/docs/building/github/contributors-pull-request-guide
 [exercism-contributing-docs-link]: https://exercism.org/docs/building
+[exercism-problem-specifications-link]: https://github.com/exercism/problem-specifications
