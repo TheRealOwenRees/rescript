@@ -6,13 +6,7 @@ Exercism exercises in ReScript.
 
 ## Installation
 
-The exercises in this langauge are written in [ReScript] v12.
-
-### Prerequisites
-
-- [Node.js] >= 22
-- A package manager of your choice e.g. NPM (pre-installed with Node.js), PNPM etc.
-- [make](https://www.gnu.org/software/make/) - look up OS specific installation guides
+Track exercises target [Rescript] 12.2.0 using the [ReScript Test][ReScriptTest] testing framework on [Node.js] 22+. If you're contributing to the track, you will also need [make](https://www.gnu.org/software/make/).
 
 ### Setting up the development environment
 
@@ -146,6 +140,7 @@ More details on how to create pull requests from a fork can be found [here][gith
 If you find this documentation is inaccurate or incomplete, or can be improved in any way, please don't hesitate to raise an [issue][issue-link] or submit a pull request.
 
 [ReScript]: https://rescript-lang.org/
+[ReScriptTest]: https://bloodyowl.github.io/rescript-test/
 [Node.js]: https://nodejs.org/
 [repository]: https://github.com/exercism/rescript
 [issue-link]: https://github.com/exercism/rescript/issues
