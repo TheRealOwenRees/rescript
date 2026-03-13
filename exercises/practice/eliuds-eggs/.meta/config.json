@@ -12,6 +12,9 @@
     "example": [
       ".meta/EliudsEggs.res",
       ".meta/EliudsEggs.resi"
+    ],
+    "editor": [
+      "src/EliudsEggs.resi"
     ]
   },
   "blurb": "Help Eliud count the number of eggs in her chicken coop by counting the number of 1 bits in a binary representation.",
