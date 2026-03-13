@@ -12,6 +12,9 @@
     "example": [
       ".meta/Bob.res",
       ".meta/Bob.resi"
+    ],
+    "editor": [
+      "src/Bob.resi"
     ]
   },
   "blurb": "Bob is a lackadaisical teenager. In conversation, his responses are very limited.",
