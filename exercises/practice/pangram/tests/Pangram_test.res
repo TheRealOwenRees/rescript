@@ -36,7 +36,7 @@ test("missing letters replaced by numbers", () => {
 })
 
 test("mixed case and punctuation", () => {
-  assertEqual(~message="mixed case and punctuation", isPangram(""Five quacking Zephyrs jolt my wax bed.""), true)
+  assertEqual(~message="mixed case and punctuation", isPangram("\"Five quacking Zephyrs jolt my wax bed.\""), true)
 })
 
 test("a-m and A-M are 26 different characters but not a pangram", () => {

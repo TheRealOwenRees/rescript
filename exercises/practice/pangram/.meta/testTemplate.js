@@ -11,7 +11,8 @@ export const assertionFunctions = [ assertEqual ]
 
 // EDIT THIS WITH YOUR TEST TEMPLATES
 export const template = (c) => {
-  return `assertEqual(~message="${c.description}", isPangram("${c.input.sentence}"), ${c.expected})`
+  const sentence = JSON.stringify(c.input.sentence)
+  return `assertEqual(~message="${c.description}", isPangram(${sentence}), ${c.expected})`
 }
 
 generateTests(__dirname, slug, assertionFunctions, template)
