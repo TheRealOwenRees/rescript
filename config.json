@@ -20,7 +20,8 @@
   },
   "files": {
     "solution": [
-      "src/%{pascal_slug}.res"
+      "src/%{pascal_slug}.res",
+      "src/%{pascal_slug}.resi"
     ],
     "test": [
       "tests/%{pascal_slug}_test.res"
@@ -32,9 +33,6 @@
     "exemplar": [
       ".meta/src/%{pascal_slug}.res",
       ".meta/src/%{pascal_slug}.resi"
-    ],
-    "editor": [
-      "src/%{pascal_slug}.resi"
     ]
   },
   "exercises": {
