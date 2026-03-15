@@ -109,14 +109,6 @@
         "difficulty": 2
       },
       {
-        "slug": "two-fer",
-        "name": "Two-Fer",
-        "uuid": "2a03dbf7-5aae-4859-8fde-b51c11cab02f",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 2
-      },
-      {
         "slug": "all-your-base",
         "name": "All Your Base",
         "uuid": "a8eaf0dc-c5ff-46a2-9c47-86f738909db9",
