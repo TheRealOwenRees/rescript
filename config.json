@@ -102,6 +102,14 @@
         "difficulty": 2
       },
       {
+        "slug": "rotational-cipher",
+        "name": "Rotational Cipher",
+        "uuid": "cded5ece-7de3-4599-b5c6-2f48e6ed6c83",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
         "slug": "space-age",
         "name": "Space Age",
         "uuid": "addd0202-4207-492d-8f7a-56b7be8d06b2",
