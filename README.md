@@ -79,6 +79,12 @@ Tests are written using [rescript-test](https://bloodyowl.github.io/rescript-tes
   - common assertions with comparator functions are located at `test_generator/assertions.js`. Pass the required ones into the `assertionFunctions` array.
   - edit the `template` function so that it will generate the test cases. The `c` variable refers to a test case in `problem-specifications/exercises/<exercise-slug>/canonical-data.json`. Look at other exercise test templates for inspiration.
 
+Run a single exercise's tests:
+
+```shell
+make test EXERCISE=<exercise-slug>
+```
+
 Run all exercise's tests:
 
 ```shell
