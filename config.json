@@ -270,6 +270,14 @@
         "difficulty": 5
       },
       {
+        "slug": "flower-field",
+        "name": "Flower Field",
+        "uuid": "1b636fca-bd18-4f54-b4d2-4f5cce1352a9",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "run-length-encoding",
         "name": "Run-Length Encoding",
         "uuid": "e2838aa6-284d-4dc2-9f9e-a81e3c275fb6",
