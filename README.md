@@ -36,6 +36,7 @@ npm run test
 ## Coding Style
 
 Use `PascalCase.res` for Reason implementation file names.
+
 A ReScript [interface file][rescript-interface-file-link] (`.resi`) should be included with every exercise to help the user get started.
 For example:
 
@@ -47,9 +48,101 @@ let add: (int, int) => int
 Run `make format` on your code before pushing.
 
 If you are using VS Code, install the official [ReScript VS Code extension](https://marketplace.visualstudio.com/items?itemName=chenglou92.rescript-vscode) for syntax highlighting and code formatting. Unofficial plugins exist for JetBrains products.
+
 Terminal based text editors often work with the [ReScript Language Server][rescript-language-server-link] installed. Refer to the documentation of your text editor / IDE for further instructions
 
-## Adding Exercises
+## Contributing to Exercises
+
+Contributing to the exercises in this track can involve: adding a new exercise, updating an existing one, or managing the test suite.
+
+Documentation on contributing to Exercism can be found [here][exercism-contributing-docs-link].
+
+### Adding a new exercise
+
+To introduce a brand new practice exercise to the track, follow these steps:
+
+- **Initialise the exercise:** Run the generator script to create the folder structure and boilerplate.
+
+```shell
+bin/add-practice-exercise <exercise-slug>
+
+# Optionally, you can also specify the exercise's difficulty (via `-d`) and/or author's GitHub username (via `-a`):
+bin/add-practice-exercise -a foobar -d 3 <exercise-slug>
+```
+
+- **Register the exercise:** Open the root `config.json` file. Update the difficulty rating of the exercise, and then ensure that that exercise is correctly placed in order of difficulty and then alphabetically within that difiiculty rating.
+
+- **Create the stub:** In `exercises/practice/<exercise-slug>/src/`, modify the .res file to return `panic("'<function-name>' has not been implemented")`.
+
+- **Define the interface:** Update the .resi (interface) file in `exercises/practice/<exercise-slug>/src/` and `exercises/practice/<exercise-slug>/.meta/` directories to include the function signatures. This provides students with the necessary type hints.
+
+- **Generate test cases:** Follow the steps in the [Generating and managing tests](#generating-and-managing-tests) subsection below.
+
+- **Provide an example solution:** In `exercises/practice/<exercise-slug>/.meta/`, implement a working solution in the .res file. This does not need to be an exemplar solution, but must pass all test cases.
+
+### Generating and managing tests
+
+We use a templating system to keep tests consistent with Exercism's canonical data found in the problem-specification git submodule.
+
+Tests are written using [rescript-test](https://bloodyowl.github.io/rescript-test/). Follow these steps when writing tests:
+
+- **Filter canonical data:** Open `exercises/practice/<exercise-slug>/.meta/tests.toml`. If a specific canonical test case is not applicable to ReScript, add ignore = true below its description. E.g.
+
+```toml
+[7ee45d52-5d35-4fbd-b6f1-5c8cd8a67f18]
+description = "Seven-digit number that is not an Armstrong number"
+
+[5ee2fdf8-334e-4a46-bb8d-e5c19c02c148]
+description = "Armstrong number containing seven zeroes"
+include = false
+
+[12ffbf10-307a-434e-b4ad-c925680e1dd4]
+description = "The largest and last Armstrong number"
+include = false
+```
+
+- **Configure the test template:** Edit `test_templates/<ExerciseName>_template.res`. Delete and uncomment the code where indicated. Use previous templates as examples of how to achieve what you need. Common comparator functions are found in `test_generator/Assertions.res`
+
+- **Generate and run tests:** To build the test file and run it, run `make test EXERCISE=<exercise-slug>`. Your generated test cases are found in `exercises/<exercise-slug>/tests/<ExerciseName>_test.res`. Verify that the test cases accept and return the correct data.
+
+- **Creating new comparator functions:** If none of the comparator functions satisfy the exercise's test requirements, you can write a new one in `test_generator/Assertions.res` and `test_generator/AssersionGenerators.res`, following the guidelines at https://bloodyowl.github.io/rescript-test/assertions. The function should be returned as a string, so that our templating system can inject the code into the generated tests.
+
+### Updating an existing exercise
+
+When syncing with upstream changes or fixing bugs:
+
+- **Update an exercise:** Modify the exercise files within the `.meta/` folder to reflect changes to the exercise, such as ignored tests or signature changes.
+
+- **Sync interface files:** If the function signature changes, ensure both the stub interface at `src/_.resi` and the example interface at `.meta/_.resi` are updated to match.
+
+- **Verify integrity:** Run the full test suite to ensure no regressions with `make test`.
+
+### Running tests
+
+- Run a single exercise's tests:
+
+```shell
+make test EXERCISE=<exercise-slug>
+```
+
+- Run all exercise's tests:
+
+```shell
+make test
+```
+
+This command will iterate over all exercises and check to see if their example implementation passes all the tests.
+
+- It is worth running the below commands to test if the code will likely pass CI checks for test cases:
+
+````shell
+./bin/verify-exercises
+
+# test a single exercise:
+./bin/verify-exercises <exercise-slug>
+``` -->
+
+<!-- ## Adding Exercises
 
 Documentation on contributing to Exercism can be found [here][exercism-contributing-docs-link].
 
@@ -60,7 +153,7 @@ bin/add-practice-exercise <exercise-slug>
 
 # Optionally, you can also specify the exercise's difficulty (via `-d`) and/or author's GitHub username (via `-a`):
 bin/add-practice-exercise -a foobar -d 3 <exercise-slug>
-```
+````
 
 Now complete the following steps:
 
@@ -95,12 +188,12 @@ This command will iterate over all exercises and check to see if their example i
 
 To test that the example solution will pass the test suite, run:
 
-```shell
+````shell
 ./bin/verify-exercises
 
 # test a single exercise:
 ./bin/verify-exercises <exercise-slug>
-```
+``` -->
 
 <!-- ### Using Docker
 
@@ -110,7 +203,7 @@ This script pulls (_downloads_) the test runner's [Docker image](https://exercis
 ```exercism/note
 The main benefit of this approach is that it best mimics how exercises are tested in production (on the website).
 Another benefit is that you don't have to install track-specific dependencies (e.g. an SDK) locally, you just need Docker installed.
-```
+````
 
 To test a single exercise, run `./bin/verify-exercises-in-docker <exercise-slug>`. -->
 
@@ -147,6 +240,8 @@ If you are auto formatting files, only commit the files relevant to your pull re
 Familiarise yourself with the Exercism [documentation][exercism-pr-docs-link] on pull requests.
 
 Make sure your work is commited on a new branch. When you are ready to submit your changes, push your changes to your forked repository and open a pull request on the language track [repository].
+
+When committing your changes to version control, ensure that only the files relevant to the current pull request are committed.
 
 More details on how to create pull requests from a fork can be found [here][github-fork-pr-link].
 
